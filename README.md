@@ -3,11 +3,17 @@ This is a fork of
 https://github.com/tantivy-search/tantivy-cli
 
 ```
-cp ./data/wiki-articles-1000.json /tmp/tantivy
-cd /tmp/tantivy
-mkdir wiki
-cp ./data/meta.json ./wiki
-tanc index --file wiki-articles-1000.json --index ./wiki
+mkdir /tmp/tantivy/wiki
+
+cp ./data/meta.json /tmp/tantivy/wiki
+
+tanc index --file ./data/wiki-articles-1000.json --index /tmp/tantivy/wiki
+```
+
+Or instead of using the **tanc** binary above you can run it this way...
+
+```
+cargo run index --file ./data/wiki-articles-1000.json --index /tmp/tantivy/wiki/
 ```
 
 See [the data dir](./data/Readme.md) for more details...   
